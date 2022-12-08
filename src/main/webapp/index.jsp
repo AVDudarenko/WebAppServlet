@@ -9,5 +9,10 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
+<%
+    int parameterValue = Integer.parseInt(request.getParameter("id")) * 2;
+    out.println("<p>Count:" + parameterValue + "</p>");
+%>
+
 </body>
 </html>

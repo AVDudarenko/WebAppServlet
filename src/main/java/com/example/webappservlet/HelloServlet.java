@@ -19,9 +19,15 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
+        out.println("<p>" + increaseParameterNumber(request) + "</p>");
         out.println("</body></html>");
     }
 
     public void destroy() {
+    }
+
+    private int increaseParameterNumber(HttpServletRequest request) {
+
+        return Integer.parseInt(request.getParameter("number")) * 2;
     }
 }
