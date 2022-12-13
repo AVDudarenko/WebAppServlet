@@ -7,6 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
+/**
+ * Servlet class, for show user form or, for input some data.
+ */
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
@@ -46,6 +49,13 @@ public class HelloServlet extends HttpServlet {
         return Integer.parseInt(request.getParameter("numberOne")) * 2;
     }
 
+    /**
+     * Method to calculate data, which we get from user.
+     * @param numberOne contains first number
+     * @param numberTwo contains second number
+     * @param operationType contains operation type
+     * @return contains operation result
+     */
     private double calculateData(double numberOne, double numberTwo, String operationType) {
         double result = 0.0;
 
@@ -62,10 +72,21 @@ public class HelloServlet extends HttpServlet {
         return result;
     }
 
+    /**
+     * Method to check is we divide by null
+     * @param numberOne contains first number
+     * @param numberTwo contains second number
+     * @return contains answer: is value null
+     */
     private boolean isDivideByNull(double numberOne, double numberTwo) {
         return (numberOne == 0.0 || numberTwo == 0.0);
     }
 
+    /**
+     * Method who redirect to error page. Path contains name of servlet class, in which we show error.
+     * @param request contains request
+     * @param response contains response
+     */
     private void redirectToErrorPage(HttpServletRequest request, HttpServletResponse response) {
         String path = "/errorPage";
         ServletContext servletContext = getServletContext();
