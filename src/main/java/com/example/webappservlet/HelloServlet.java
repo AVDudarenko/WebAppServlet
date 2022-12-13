@@ -8,6 +8,7 @@ import javax.servlet.annotation.*;
 public class HelloServlet extends HttpServlet {
     private String message;
 
+
     public void init() {
         message = "Hello World!";
     }
@@ -15,11 +16,18 @@ public class HelloServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        // Hello
+        double numberOne = Double.parseDouble(request.getParameter("numberOne"));
+        double numberTwo = Double.parseDouble(request.getParameter("numberTwo"));
+        String operationType = request.getParameter("operation");
+
+
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
-        out.println("<p>" + increaseParameterNumber(request) + "</p>");
+        out.println("<p>" + numberOne + "</p>");
+        out.println("<p>" + numberTwo + "</p>");
+        out.println("<p>" + operationType + "</p>");
+        out.println("<p>" + "Result of operation: " + calculateData(numberOne, numberTwo, operationType) + "</p>");
         out.println("</body></html>");
     }
 
@@ -28,6 +36,27 @@ public class HelloServlet extends HttpServlet {
 
     private int increaseParameterNumber(HttpServletRequest request) {
 
-        return Integer.parseInt(request.getParameter("number")) * 2;
+        return Integer.parseInt(request.getParameter("numberOne")) * 2;
+    }
+
+    private double calculateData(double numberOne, double numberTwo, String operationType) {
+        double result = 0.0;
+
+        switch (operationType) {
+            case "Divide":
+                result = numberOne / numberTwo;
+                break;
+            case "Multiply":
+                result = numberOne * numberTwo;
+                break;
+            case "Sum":
+                result = numberOne + numberTwo;
+                break;
+            case "Subtraction":
+                result = numberOne - numberTwo;
+                break;
+
+        }
+        return result;
     }
 }
