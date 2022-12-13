@@ -41,6 +41,7 @@
 </p>
 <p>
     Results of multiplying by ten:
+</p>
 <ul>
     <%
         //print value ten times
@@ -49,6 +50,9 @@
         }
     %>
 </ul>
+<%--Get parameter from url--%>
+<p>
+    Parameter value: <%= request.getParameter("value")%>
 </p>
 </body>
 </html>
