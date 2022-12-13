@@ -37,7 +37,7 @@
     2+2=  <%= 2 + 2 %>
     2*2=  <%= 2 * 2 %>
     2/2=  <%= 2 / 2 %>
-    2-2=  <%= 2 + -2 %>
+    2-2=  <%= 2 + 2 %>
 </p>
 <p>
     Results of multiplying by ten:
@@ -52,7 +52,7 @@
 </ul>
 <%--Get parameter from url--%>
 <p>
-    Parameter value: <%= request.getParameter("value")%>
+    Parameter value: <%= Integer.parseInt(request.getParameter("value")) * 10%>
 </p>
 </body>
 </html>
