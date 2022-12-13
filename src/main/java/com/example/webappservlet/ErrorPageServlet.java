@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Servlet class for show error, when we divide by zero
+ */
 @WebServlet(name = "errorPageServlet", value = "/errorPage")
 public class ErrorPageServlet extends HttpServlet {
 
