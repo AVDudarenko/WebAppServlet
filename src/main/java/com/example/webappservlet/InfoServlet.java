@@ -17,6 +17,7 @@ public class InfoServlet extends HttpServlet {
 
         request.setAttribute("name", "Sasha");
         request.setAttribute("message", "I love Java");
+        request.setAttribute("isEnable", "true");
 
         getServletContext().getRequestDispatcher("/info.jsp").forward(request, response);
     }
