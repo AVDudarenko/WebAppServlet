@@ -19,7 +19,6 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<p>
 <form action="hello-servlet" method="GET">
     number One: <input name="numberOne"/>
     <br><br>
@@ -32,7 +31,6 @@
     <br><br>
     <input type="submit" value="Submit"/>
 </form>
-</p>
 <p>
     2+2=  <%= 2 + 2 %>
     2*2=  <%= 2 * 2 %>
@@ -51,9 +49,22 @@
     %>
 </ul>
 <%--Get parameter from url--%>
-<p>
-    Parameter value: <%= Integer.parseInt(request.getParameter("value")) * 10%>
-</p>
+<%--<p>--%>
+<%--    Parameter value: <%= Integer.parseInt(request.getParameter("value")) * 10 %>--%>
+<%--</p>--%>
+
+<%--send data to userInfo.jsp--%>
+<p> User info form: </p>
+<form action="userInfo.jsp" method="POST">
+    Name: <input name="name"/>
+    <br><br>
+    Surname: <input name="surname"/>
+    <br><br>
+    Age: <input name="age"/>
+    <br><br>
+    <input type="submit" value="Submit"/>
+</form>
+
 </body>
 </html>
 
