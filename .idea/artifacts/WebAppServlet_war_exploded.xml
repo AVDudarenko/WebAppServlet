@@ -18,6 +18,8 @@
           <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter:5.9.0" />
           <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-params:5.9.0" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.31" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
